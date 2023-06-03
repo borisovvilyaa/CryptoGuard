@@ -11,4 +11,5 @@ class decrypter (encrypter):
     def decrypt(self):
         cipher = AES.new(self.key, AES.MODE_ECB)
         decrypted_text = cipher.decrypt(self.file.generate_bytes())
-        return decrypted_text
+        return decrypted_text.decode('utf-8')
+
