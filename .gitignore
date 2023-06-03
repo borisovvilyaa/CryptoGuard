@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyi
+*.egg-info/
+dist/
+build/
+*.egg
+*.swp
+*.swo
+*.log
+*.tmp
+
+# VSCode
+.vscode/
+*.code-workspace
+/.vscode/extensions/*
