@@ -21,12 +21,35 @@ Work in progress...
 
 ## Usage
 
-Work in progress...
+1. Make password for file 
+
+How it works? Class encrypter create hash for password from text file 
+
+```python
+from src.encrypt import encrypter
+
+file = encrypter("file.txt")
+
+print(file.read_file())
+
+print(file.get_password())
+
+```
+
+Output:
+
+```mathematic
+Hello world!
+
+It's first encrypt
+
+771cbac3c2df85a04de8dba6f104a1177c192dfc
+```
+
 
 ## Supported Platforms
 - Windows
 - Web (coming soon...)
-
 
 ### Author
 
