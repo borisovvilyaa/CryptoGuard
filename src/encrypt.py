@@ -1,17 +1,25 @@
 import os
 import hashlib
+from src.AES import AESCipher
 class encrypter:
     def __init__(self, file_name) -> None:
         self.file_name = file_name
         self.src = "files/"+self.file_name
         self.dest = 'encrypt/'+self.file_name
         self.password = self.generate_password()
+        self.aes = self.generate_bytes()
         
     def generate_password(self):
         h = hashlib.new('ripemd160')
         h.update(self.read_file().encode('utf-8'))
         return h.hexdigest()
     
+    def generate_bytes(self):
+        cipher = AESCipher()
+        encrypted_text = cipher.encrypt(self.read_file().encode('utf-8'))
+        return encrypted_text
+    def return_data_aes(self) -> bytes:
+        return self.aes
     def return_name(self) -> str:
         return self.file_name
     
