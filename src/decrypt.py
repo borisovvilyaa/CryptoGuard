@@ -9,12 +9,11 @@ class decrypter (encrypter):
         self.key =  b'\xfbkL\x83mpq\xf9\x90\xe6\x89\xfc\x82\xa3T\x00'
         self.password = password
     def verify(self) -> bool:
-        if self.password == self.decrypt_from_file()[:40]:
+        if self.ripemd160(self.password).encode("utf-8") == self.decrypt_from_file()[:40]:
             return True
         else:
             return False
     def decrypt(self):
-        # print(self.verify())
         if self.verify(): 
             cipher = AES.new(self.key, AES.MODE_ECB)
             decrypted_text = cipher.decrypt(self.decrypt_from_file()[40:])

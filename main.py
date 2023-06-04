@@ -12,7 +12,7 @@ file.encrypt()
 
 # print(file.read_file_utf8())
 
-file_decrypter = decrypter("file.bin", b"38e8606c44c0cc3c06cf790f7892c12136912258")
+file_decrypter = decrypter("file.gf", "38e8606c44c0cc3c06cf790f7892c12136912258")
 print(file_decrypter.decrypt())
 
 print("--------------------------------End--------------------------------")

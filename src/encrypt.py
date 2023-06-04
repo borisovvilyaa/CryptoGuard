@@ -10,8 +10,11 @@ class encrypter:
         self.aes = self.generate_bytes()
         
     def generate_password(self):
+        return self.ripemd160(self.read_file())
+    
+    def ripemd160(self, s) -> str: 
         h = hashlib.new('ripemd160')
-        h.update(self.read_file().encode('utf-8'))
+        h.update(s.encode('utf-8'))
         return h.hexdigest()
     
     def generate_bytes(self):
@@ -46,13 +49,13 @@ class encrypter:
             file_item += f.read() + "\n"
         return file_item
     def read_file_utf8(self) -> str:
-        with open(f"encrypt/{self.file_name.split('.')[0]}.bin", 'rb') as file:
+        with open(f"encrypt/{self.file_name.split('.')[0]}.gf", 'rb') as file:
             bytes_data = file.read()
         return bytes_data
     
     def encrypt(self):
-        with open(f"encrypt/{self.file_name.split('.')[0]}.bin", "wb") as file:
-            file.write(bytes(self.password, 'utf-8'))
+        with open(f"encrypt/{self.file_name.split('.')[0]}.gf", "wb") as file:
+            file.write(bytes(self.ripemd160(self.password), 'utf-8'))
             file.write(self.aes)
             
 
