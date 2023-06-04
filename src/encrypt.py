@@ -23,7 +23,8 @@ class encrypter:
         return self.aes
     def return_name(self) -> str:
         return self.file_name
-    
+    def return_password(self) -> str:
+        return self.password
     def return_src(self) -> str:
         return self.src
     
@@ -44,10 +45,14 @@ class encrypter:
         with open(self.src) as f:
             file_item += f.read() + "\n"
         return file_item
+    def read_file_utf8(self) -> str:
+        with open(f"encrypt/{self.file_name.split('.')[0]}.bin", 'rb') as file:
+            bytes_data = file.read()
+        return bytes_data
     
     def encrypt(self):
-        # Открытие файла для записи с использованием оператора with
         with open(f"encrypt/{self.file_name.split('.')[0]}.bin", "wb") as file:
+            file.write(bytes(self.password, 'utf-8'))
             file.write(self.aes)
             
 
