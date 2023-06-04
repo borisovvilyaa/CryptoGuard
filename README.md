@@ -51,20 +51,23 @@ It's first encrypt
 ```python
 
 from src.encrypt import encrypter
+# from src.render import *
 from src.decrypt import decrypter
 
 file = encrypter("file.txt")
+print("Password for this file is", file.get_password())
 file.encrypt()
-file_decrypter = decrypter("file.bin")
-print(file_decrypter.decrypt())
 
+
+file_decrypter = decrypter("file.bin", b"38e8606c44c0cc3c06cf790f7892c12136912258")
+print(file_decrypter.decrypt())
 ```
 
 Output:
 
 ```mathematic
-hello world
-♦♦♦♦
+Password for this file is 38e8606c44c0cc3c06cf790f7892c12136912258
+Hello, my name is Illia
 ```
 
 ## Supported Platforms
