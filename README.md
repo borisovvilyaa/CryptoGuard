@@ -46,6 +46,26 @@ It's first encrypt
 771cbac3c2df85a04de8dba6f104a1177c192dfc
 ```
 
+2. Make encrypted and decrypted file
+
+```python
+
+from src.encrypt import encrypter
+from src.decrypt import decrypter
+
+file = encrypter("file.txt")
+file.encrypt()
+file_decrypter = decrypter("file.bin")
+print(file_decrypter.decrypt())
+
+```
+
+Output:
+
+```mathematic
+hello world
+♦♦♦♦
+```
 
 ## Supported Platforms
 - Windows
