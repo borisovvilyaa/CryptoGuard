@@ -18,6 +18,7 @@ class encrypter:
         cipher = AESCipher()
         encrypted_text = cipher.encrypt(self.read_file().encode('utf-8'))
         return encrypted_text
+    
     def return_data_aes(self) -> bytes:
         return self.aes
     def return_name(self) -> str:
@@ -44,4 +45,9 @@ class encrypter:
             file_item += f.read() + "\n"
         return file_item
     
+    def encrypt(self):
+        # Открытие файла для записи с использованием оператора with
+        with open(f"encrypt/{self.file_name.split('.')[0]}.bin", "wb") as file:
+            file.write(self.aes)
+            
 

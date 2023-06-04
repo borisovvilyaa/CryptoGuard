@@ -18,12 +18,3 @@ class AESCipher:
         unpadded_data = unpad(decrypted_data, AES.block_size)
         return unpadded_data
 
-# Пример использования класса AESCipher
-# cipher = AESCipher()
-
-# data = b'Hello, World!'
-# encrypted_text = cipher.encrypt(data)
-# decrypted_text = cipher.decrypt(encrypted_text)
-
-# print("Зашифрованный текст:", encrypted_text)
-# print("Расшифрованный текст:", decrypted_text)
