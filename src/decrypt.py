@@ -19,7 +19,7 @@ class decrypter (encrypter):
             decrypted_text = cipher.decrypt(self.decrypt_from_file()[40:])
             return decrypted_text.decode('utf-8')
         else:
-            return "Password not wrong!пше"
+            return "Password not wrong!"
     def decrypt_from_file(self) -> bytes:
         with open(f'encrypt/{self.file}', 'rb') as file:
             bytes_data = file.read()
