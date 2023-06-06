@@ -7,7 +7,7 @@ Version: 0.1-alpha
 
 from src.encrypt import encrypter
 # from src.render import *
-# from src.decrypt import decrypter
+from src.decrypt import decrypter
 
 import os
 import shutil
@@ -16,6 +16,7 @@ import customtkinter as ctk
 from tkinter import filedialog
 from PIL import ImageTk, Image
 from src.interface.ReadfileEncrypt import Readfile
+from src.interface.ReadfileDecrypt import ReadfileDecryption
 
 
 class App:
@@ -102,6 +103,9 @@ class App:
 
         # Move the file to the 'encrypt' folder
         shutil.move(file_path, new_file_path)
+        
+        readfile = ReadfileDecryption(file_name)
+        readfile.run()
 
     def generate_password(self):
         """
