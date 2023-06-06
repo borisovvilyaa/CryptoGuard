@@ -1,0 +1,5 @@
+customtkinter
+pillow
+hashlib
+CTkMessagebox
+pycryptodome
