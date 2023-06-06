@@ -3,9 +3,9 @@ Module: Readfile.py
 Description: GUI interface for displaying and encrypting file contents.
 Author: Borusov Illia
 """
+from config import VERSION
 
 import customtkinter as ctk
-from CTkMessagebox import CTkMessagebox
 # from src.encrypt import encrypter
 
 
@@ -23,7 +23,7 @@ class TextArea(ctk.CTk):
         ctk.set_default_color_theme("dark-blue")  # Themes: blue (default), dark-blue, green
         self.window = ctk.CTk()
         self.window.geometry("420x320")
-        self.window.title("CryptoGuard Editor v0.1-alpha | Borusov Illia")
+        self.window.title(f"CryptoGuard Editor {VERSION} | Borusov Illia")
 
 
         self.textbox = ctk.CTkTextbox(master=self.window, width=400, corner_radius=0)

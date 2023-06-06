@@ -11,6 +11,7 @@ from src.decrypt import decrypter
 
 import os
 import shutil
+from config import VERSION
 
 import customtkinter as ctk
 from tkinter import filedialog
@@ -29,7 +30,7 @@ class App:
 
         self.window = ctk.CTk()
         self.window.geometry("420x320")
-        self.window.title("CryptoGuard v0.1-alpha | Borusov Illia")
+        self.window.title(f"CryptoGuard {VERSION} | Borusov Illia")
 
         self.logo_path = "logo.png"
         self.logo_image = Image.open(self.logo_path)
