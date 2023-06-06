@@ -38,6 +38,8 @@ class Readfile(ctk.CTk):
         self.encrypt_button.grid(row=1, column=0, sticky="w", padx=5, pady=5)
         
       
+        self.save_button = ctk.CTkButton(master=self.window, text="Save file", corner_radius=0, command=self.save_file)
+        self.save_button.grid(row=1, column=0, sticky="e", padx=5, pady=5)
 
 
         self.window.grid_rowconfigure(0, weight=0)  # Make row 0 fill available vertical space
@@ -61,6 +63,18 @@ class Readfile(ctk.CTk):
         if file.encrypt():
             self.show_message(file.get_password())
             print("Password for this file is", file.get_password())
+            
+    def save_file(self):
+        text = self.textbox.get("0.0", "end")
+        try:
+            with open("files/%s" % self.file, "w") as f:
+                f.write(text)
+            CTkMessagebox(title="Succes", message="Success!")
+
+        except IOError:
+            CTkMessagebox(title="Error", message="Error saving")
+
+                
 
     def run(self):
         """
