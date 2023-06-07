@@ -11,16 +11,15 @@
 
 4. **Password storage**: CryptoGuard provides a secure password storage feature. Users can store their passwords in an encrypted database that is only accessible after entering the master password or using biometric authentication (e.g. fingerprint scanner or facial recognition).
 
-5. **Data cleansing**: The app also allows users to securely delete sensitive data from the device. Using special cryptographic algorithms, CryptoGuard ensures that deleted files or data cannot be recovered.
-
-6. **Second Authentication Factor**: The application supports the use of a second authentication factor to increase the security of user accounts. It can be linked to the application or use standard methods such as one-time passwords via SMS or TOTP (Time-based One-Time Password) authenticators.
 
 ## Installation
 
-Work in progress...
+1. Install python
+2. Install packages from requirements.txt `pip install -r requirements.txt`
+3. Open CMD or Terminal and write commant `python main.py` (Windows) or `python3 main.py` (MacOS, Linux)
 
 ## Usage
-
+#### On code
 1. Make password for file 
 
 How it works? Class encrypter create hash for password from text file 
@@ -69,6 +68,21 @@ Output:
 Password for this file is 38e8606c44c0cc3c06cf790f7892c12136912258
 Hello, my name is Illia
 ```
+#### On winwods
+1. Encrypt file
+1.1 Open program and push _Encrypt_  
+![image](https://github.com/borisovvilyaa/CryptoGuard/assets/113841816/93a00062-b20f-46de-b3fb-8092fdfe3ec9)  
+1.2 Change another file and open him  
+![image](https://github.com/borisovvilyaa/CryptoGuard/assets/113841816/b073e282-792c-4aee-a5db-ebd6bc1d0a5c)  
+1.3 In this window can edit text and save him or if push on button `Encrypt end save`, file moved in folder `encrypt` 
+1.4 In the end window, we can see password and window about _success_ moving file  
+![image](https://github.com/borisovvilyaa/CryptoGuard/assets/113841816/12f5478b-c1fe-4f2e-9c41-08c6aed76507)  
+2. Decrypt file  
+2.1 When push the button `decrypt`, opening file in format _.gf_  
+2.3 Write password for this file, which have on point 1.4  
+![image](https://github.com/borisovvilyaa/CryptoGuard/assets/113841816/3cc84c21-9fad-4373-9b21-da7a4df8971a)  
+2.4 See encrypt file  
+![image](https://github.com/borisovvilyaa/CryptoGuard/assets/113841816/c4261419-d92d-49be-8c74-71a01acddbb1)  
 
 ## Supported Platforms
 - Windows
