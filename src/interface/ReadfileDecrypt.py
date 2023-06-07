@@ -2,12 +2,14 @@ import customtkinter as ctk
 from CTkMessagebox import CTkMessagebox
 from src.decrypt import decrypter
 from src.interface.TextArea import TextArea
-#7602610dc0afeb262d6a024189cd805d4e81e1f8
-
 
 class ReadfileDecryption(ctk.CTk):
     def __init__(self, file):
-       
+        """
+        Initialize the ReadfileDecryption class.
+
+        @param file: The file to be decrypted.
+        """
         self.file = file
 
         ctk.set_default_color_theme("dark-blue")  # Themes: blue (default), dark-blue, green
@@ -25,9 +27,12 @@ class ReadfileDecryption(ctk.CTk):
         self.submit_button.pack()
 
     def submit_password(self):
+        """
+        Handle the submit button click event.
+        """
         password = self.password_entry.get()
         dec = decrypter(self.file, password)
-        # Добавьте здесь код для обработки введенного пароля
+        # Add code here to handle the entered password
         if dec.verify():
             self.window.destroy()
 
@@ -36,15 +41,12 @@ class ReadfileDecryption(ctk.CTk):
         else:
             CTkMessagebox(title="Error", message="Passwords were not valid")
 
-
     def run(self):
-        
+        """
+        Run the application main loop.
+        """
         self.window.mainloop()
 
-
-  
-
-
 if __name__ == "__main__":
-    app = ReadfileDecryption("Hello", "example.txt")
+    app = ReadfileDecryption("example.txt")
     app.run()
