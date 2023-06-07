@@ -7,7 +7,7 @@ from config import VERSION
 import customtkinter as ctk
 from CTkMessagebox import CTkMessagebox
 from src.encrypt import encrypter
-
+from src.interface.TextArea import TextArea
 
 class Readfile(ctk.CTk):
     def __init__(self, text, file):
@@ -24,7 +24,7 @@ class Readfile(ctk.CTk):
         ctk.set_default_color_theme("dark-blue")  # Themes: blue (default), dark-blue, green
         self.window = ctk.CTk()
         self.window.geometry("420x320")
-        self.window.title(f"CryptoGuard Editor {VERSION} | Borusov Illia")
+        self.window.title(f"CryptoGuard Editor Encrypt {VERSION} | Borusov Illia")
 
 
         self.textbox = ctk.CTkTextbox(master=self.window, width=400, corner_radius=0)
@@ -62,6 +62,7 @@ class Readfile(ctk.CTk):
         file = encrypter(self.file)
         if file.encrypt():
             self.show_message(file.get_password())
+            TextArea(f"Password: {file.get_password()}").run()
             print("Password for this file is", file.get_password())
             
     def save_file(self):
