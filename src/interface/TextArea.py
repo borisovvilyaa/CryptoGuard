@@ -1,49 +1,38 @@
 """
-Module: Readfile.py
-Description: GUI interface for displaying and encrypting file contents.
+Module: TextArea.py
+Description: A GUI application for displaying and editing text.
 Author: Borusov Illia
 """
+
 from config import VERSION
-
 import customtkinter as ctk
-# from src.encrypt import encrypter
-
 
 class TextArea(ctk.CTk):
     def __init__(self, text):
         """
-        Initializes the Readfile object with the given text content and file name.
-        
-        @param text: Text content to display in the GUI.
-        @param file: Name of the file.
+        Initialize the TextArea class.
+
+        @param text: The initial text to be displayed in the text area.
         """
-        
         self.text_encrypt = text
 
-        ctk.set_default_color_theme("dark-blue")  # Themes: blue (default), dark-blue, green
+        ctk.set_default_color_theme("dark-blue")
         self.window = ctk.CTk()
-        self.window.geometry("420x320")
+        self.window.geometry("800x600")
         self.window.title(f"CryptoGuard Editor {VERSION} | Borusov Illia")
 
-
-        self.textbox = ctk.CTkTextbox(master=self.window, width=400, corner_radius=0)
-        self.textbox.grid(row=0, column=0, sticky="nsew")
+        self.textbox = ctk.CTkTextbox(master=self.window, width=800, height=600, corner_radius=0)
+        self.textbox.pack(fill="both", expand=True)
         self.textbox.insert("1.0", self.text_encrypt)
+        self.textbox.configure(font=("Monospace", 12))
 
-        self.window.grid_rowconfigure(0, weight=0)  # Make row 0 fill available vertical space
-        self.window.grid_columnconfigure(0, weight=1)  # Make column 0 fill available horizontal space
-        
-      
-
-        self.window.iconbitmap("logo.ico")  # Set window icon
-
+        self.window.iconbitmap("logo.ico")
 
     def run(self):
         """
-        Runs the GUI application.
+        Run the application main loop.
         """
         self.window.mainloop()
-
 
 if __name__ == "__main__":
     app = TextArea("text")

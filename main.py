@@ -2,7 +2,6 @@
 Module: main.py
 Description: A GUI application for file encryption and decryption using the CryptoGuard library.
 Author: Borusov Illia
-Version: 0.1-alpha
 """
 
 from src.encrypt import encrypter
@@ -18,7 +17,8 @@ from tkinter import filedialog
 from PIL import ImageTk, Image
 from src.interface.ReadfileEncrypt import Readfile
 from src.interface.ReadfileDecrypt import ReadfileDecryption
-
+from src.interface.TextArea import TextArea
+from src.generate_password import generate_password
 
 class App:
     def __init__(self):
@@ -111,10 +111,10 @@ class App:
     def generate_password(self):
         """
         Callback function for the generate password button.
-        Generates a password using the SHA-3 algorithm.
+        Generates a password using the RIPEMD160 algorithm.
         """
-
-        pass
+        TextArea("Password: %s" % generate_password()).run()
+        
 
     def run(self):
         """
