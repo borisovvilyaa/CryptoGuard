@@ -5,11 +5,9 @@
 
 1. **File Encryption**: Users will be able to select and protect their sensitive files and documents using various encryption algorithms such as AES (Advanced Encryption Standard). The application allows the creation of encrypted containers in which users can store and manage their files.
 
-2. **Message Encryption**: The application provides a secure messenger that allows users to exchange encrypted messages. When using "CryptoGuard" to send messages, the text will be automatically encrypted on the sender's device and decrypted on the recipient's device. This ensures the confidentiality of correspondence and protects messages from unauthorized access.
+2. **Password Generator**: The application also provides a tool for generating strong passwords. Users will be able to create complex and unique passwords for their online accounts, which increases the security and protection against hacking.
 
-3. **Password Generator**: The application also provides a tool for generating strong passwords. Users will be able to create complex and unique passwords for their online accounts, which increases the security and protection against hacking.
-
-4. **Password storage**: CryptoGuard provides a secure password storage feature. Users can store their passwords in an encrypted database that is only accessible after entering the master password or using biometric authentication (e.g. fingerprint scanner or facial recognition).
+3. **Password storage**: CryptoGuard provides a secure password storage feature. Users can store their passwords in an encrypted database that is only accessible after entering the master password or using biometric authentication (e.g. fingerprint scanner or facial recognition).
 
 
 ## Installation
